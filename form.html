@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jslearning</title>
+</head>
+<body>
+
+  <form name="giris" onsubmit="return kontrol()">
+  	
+  	Kullanıcı Adı:<input type="text" name="ad"><br>
+  	Parola:<input type="password" name="parola"><br>
+  	Parola (Tekrar):<input type="password" name="parola2"><br>
+  	E-mail:<input type="text" name="email"><br>
+  	<input type="checkbox" name="bulten">Bülten almak istiyorum<br>
+  	<input type="submit"><input type="reset">
+
+
+
+  </form>
+
+
+
+<script type="text/javascript">
+
+function kontrol() {
+	var kul=document.giris.ad.value;
+	var parola=document.giris.parola.value;
+	var parola2=document.giris.parola2.value;
+	var email=document.giris.email.value;
+	var at=email.indexOf("@");
+	var dot=email.lastIndexOf(".");
+
+
+	if (kul=null || kul.length<3) {
+		alert("kullanıcı adı için en az 3 karakter giriniz");
+		document.giris.ad.focus();
+		return false;
+	}
+
+	else if (at<1 || dot<ati+2 || dot +2 >=email.length) {
+
+		alert("email hatalı");
+		document.giris.email.focus(); return false;
+
+	}
+
+	else if (parola == null || parola2=="") {
+
+		alert("parolayı tekrar giriniz");
+		return false;
+	}
+
+	else if (parola!=parola2 || parola2!=parola) {
+
+			alert("parolalar eşleşmiyor!");
+			return false;
+
+	}
+
+	else if (bulten.checked) alert("bülten gönderilecek!") {}
+
+
+	else
+		return true;
+		
+}
+
+
+
+
+
+</script>
+</body>
+
+</html>
